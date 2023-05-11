@@ -1,0 +1,8 @@
+global:
+  title: "MountAye: A Blog"
+  description: Intellectual pursuits constitute a way of life.
+titles:
+  index:   Home 
+  history: History
+  topics:  Topics
+  about:   About

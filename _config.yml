@@ -1,0 +1,13 @@
+url:          "https://mountaye.github.io"
+baseurl_root: "/blog"
+baseurl:      "/blog"
+permalink:    "/articles/:title"
+author:       MountAye
+plugins:
+  - jekyll-feed
+  - jekyll-multiple-languages-plugin
+languages: [zh-CN, en]
+language_names:
+  zh-CN: 汉
+  en:    En
+exclude_from_localizations: ["assets"]

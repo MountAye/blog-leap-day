@@ -1,0 +1,9 @@
+global:
+  title: 阿掖山：一个博客
+  description: 智力活动是一种生活态度
+titles:
+  index:   首页
+  history: 历史
+  topics:  分类
+  about:   关于
+  

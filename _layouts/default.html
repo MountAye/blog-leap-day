@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% include seo.html %}
+{% include adsense_head.html %}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/main.js' | prepend: site.baseurl_root }}"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <header>
+      <h1>{% t global.title %}</h1>
+      <p>{% t global.description %}</p>
+    </header>
+    <div id="banner">
+      <span id="logo"></span>
+      <span class="button fork">
+        <a href="{% if page.namespace %}{% tl {{page.namespace}} zh-CN %}{% else %}{{ page.url | prepend: site.baseurl_root }}{% endif %}"><strong>汉</strong></a> | 
+        <a href="{% if page.namespace %}{% tl {{page.namespace}} en    %}{% else %}{{ page.url | prepend: '/en' | prepend: site.baseurl_root }}{% endif %}"><strong>En</strong></a>
+      </span>
+      <div class="downloads">
+        <span></span>
+        <ul>
+          <li><a href="{% tl history {{ site.lang }} %}" class="button">{% t titles.history %}</a></li>
+          <li><a href="{% tl topics  {{ site.lang }} %}" class="button">{% t titles.topics  %}</a></li>
+          <li><a href="{% tl about   {{ site.lang }} %}" class="button">{% t titles.about   %}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      {{ content }}
+    </div>
+    <footer>
+      <p><small>Hosted on GitHub Pages
+            <br>Theme by <a href="https://twitter.com/mattgraham">mattgraham</a>
+            <br>Modified by <a href="https://www.github.com/MountAye">MountAye</a>
+      </small></p>
+    </footer>
+
+  </body>
+</html>
+
+  

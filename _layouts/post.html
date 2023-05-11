@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<section id="ad-head">{% include adsense.html %}</section>
+<section class="outlined">
+  <h1>{{ page.title }}</h1>
+  <p style="text-indent: 0;">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }} </p>
+  <p style="text-indent: 0;">{% for kw in page.keywords %}<code>.{{ kw }}</code>{% endfor %}</p>
+  {% if page.author %}<blockquote><p>{{ page.author }}</p></blockquote>{% endif %}
+  <hr>
+  {{ content }}
+  <hr>
+</section>
+<section id="ad-tail">{% include adsense.html %}</section>
+<section id="comments">
+  {% include giscus.html %}
+</section>
