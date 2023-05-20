@@ -389,6 +389,10 @@ footer {
 
 @media print, screen and (max-width: 1360px) {
 
+  body {
+    background: #fbfbfb;
+  }
+
   div.wrapper {
     width:auto;
     margin:190px, auto, auto;
@@ -427,9 +431,9 @@ footer {
   }
 
   section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
-    padding:20px 0;
+    border:0px solid #e5e5e5;
+    border-width: 0px;
+    padding:20px 5px;
     margin: auto;
     max-width: 700px;
   }
