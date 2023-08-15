@@ -14,25 +14,36 @@ var mainHeight = function() {
 };
 
 window.addEventListener('resize', mainHeight);
+
 document.addEventListener('DOMContentLoaded', function() {
-  var outlinedHeadings = document.querySelectorAll('.outlined h1, .outlined h2, .outlined h3');
+  var headings = document.querySelectorAll('.outlined h1, .outlined h2, .outlined h3');
   var navList = document.querySelector('nav ul');
+  var currentLevel = 1;
+  var currentList = navList;
 
-  outlinedHeadings.forEach(function(heading) {
-    var tagName = heading.tagName.toLowerCase();
-    var text = heading.textContent.trim();
-    var id = text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
-
+  headings.forEach(function(heading) {
+    var level = parseInt(heading.tagName.charAt(1));
     var listItem = document.createElement('li');
-    listItem.className = 'tag-' + tagName;
+    listItem.classList.add("tag-h" + level)
     var link = document.createElement('a');
-    link.href = '#' + id;
-    link.textContent = text;
-    listItem.appendChild(link);
-    navList.appendChild(listItem);
+    link.textContent = heading.textContent;
+    link.href = '#' + heading.id;
+    listItem.appendChild(link);            
 
-    heading.setAttribute('id', id);
+    if (level > currentLevel) {
+      var sublist = document.createElement('ul');
+      currentList.lastElementChild.appendChild(sublist);
+      currentList = sublist;
+    } else if (level < currentLevel) {
+      for (var i = level; i < currentLevel; i++) {
+        currentList = currentList.parentElement.parentElement;
+      }
+    }
+    
+    currentList.appendChild(listItem);
+    currentLevel = level;
   });
+
 
   navList.querySelector('li:first-child a').parentElement.classList.add('active');
 
@@ -41,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(event) {
       event.preventDefault();
       var targetId = this.getAttribute('href');
-      var position = document.querySelector(targetId).offsetTop - 190;
+      var position = document.querySelector(targetId).offsetTop + 380;
       window.scrollTo({ top: position, behavior: 'smooth' });
       navList.querySelectorAll('li a').forEach(function(a) {
         a.parentElement.classList.remove('active');
