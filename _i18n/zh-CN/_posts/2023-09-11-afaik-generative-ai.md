@@ -2,7 +2,7 @@
 layout: post
 title: 如是我闻 | 生成式人工智能
 keywords: [md,ai]
-excerpt: 
+excerpt: ""
 ---
 
 ## 生成式语言模型

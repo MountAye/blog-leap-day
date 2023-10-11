@@ -19,5 +19,5 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="{{ title }}" />
 <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"{{ page.author | default: site.author }}"},"dateModified":"{{ page.modified | date: "%Y-%m-%d" }}","datePublished":"{{ page.date | date: "%Y-%m-%d" }}","description":"{% if page.excerpt %}{{ page.excerpt }}{% else %}{% t global.description %}{% endif %}","headline":"{% if page.excerpt %}{{ page.excerpt }}{% else %}{% t global.description %}{% endif %}","mainEntityOfPage":{"@type":"WebPage","@id":"{{  }}"},"url":"{{ page.url | prepend: site.baseurl | prepend: site.url }}"}
+    {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"{{ page.author | default: site.author }}"},"dateModified":"{{ page.modified | date: "%Y-%m-%d" }}","datePublished":"{{ page.date | date: "%Y-%m-%d" }}","description":"{% if page.excerpt %}{{ page.excerpt }}{% else %}{% t global.description %}{% endif %}","headline":"{% if page.excerpt %}{{ page.excerpt }}{% else %}{% t global.description %}{% endif %}","mainEntityOfPage":{"@type":"WebPage","@id":"{{ page.url | prepend: site.baseurl | prepend: site.url }}"},"url":"{{ page.url | prepend: site.baseurl | prepend: site.url }}"}
 </script>
