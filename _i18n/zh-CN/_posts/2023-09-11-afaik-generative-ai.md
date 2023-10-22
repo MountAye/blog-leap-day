@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如是我闻 | 生成式人工智能
-keywords: [md,ai]
+keywords: [md,ai,rss]
 excerpt: ""
 ---
 
